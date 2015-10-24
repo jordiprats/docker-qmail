@@ -1,5 +1,16 @@
 #!/bin/bash
 
+grep "$(basename $0)" /.hari
+
+if [ $? -eq 0 ];
+then
+  echo "i already did that, bitch"
+  exit 1
+fi
+
+echo $(basename $0) >> /.hari
+
+
 yum install groff -y
 
 umask 022
@@ -42,4 +53,4 @@ cd /usr/local/src/netqmail-1.06
 make setup check
 
 
-./config-fast ejemplo.systemadmin.es
+./config-fast $REVERSE_NAME
