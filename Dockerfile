@@ -1,6 +1,7 @@
 FROM centos:centos5
-MAINTAINER Jordi Prats "jprats@systemadmin.es"
+MAINTAINER Jordi Prats
 
 COPY src/ /usr/local/src
+COPY scripts/ /usr/local/src/docker-deploy
 
-RUN yum install -y gcc gcc-c++ make wget curl libtermcap-devel mysql55
+RUN /usr/local/src/docker-deploy/runmebitch.sh
