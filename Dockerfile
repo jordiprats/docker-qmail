@@ -4,4 +4,4 @@ MAINTAINER Jordi Prats
 COPY src/ /usr/local/src
 COPY scripts/ /usr/local/src/docker-deploy
 
-RUN /usr/local/src/docker-deploy/runmebitch.sh
+RUN /bin/bash /usr/local/src/docker-deploy/runmebitch.sh
