@@ -10,7 +10,6 @@ fi
 
 echo $(basename $0) >> /.hari
 
-
 yum install groff -y
 
 umask 022

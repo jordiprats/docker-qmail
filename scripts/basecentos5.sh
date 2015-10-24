@@ -1,5 +1,15 @@
 #!/bin/bash
 
+grep "$(basename $0)" /.hari
+
+if [ $? -eq 0 ];
+then
+  echo "i already did that, bitch"
+  exit 1
+fi
+
+echo $(basename $0) >> /.hari
+
 echo "exclude=*.i386 *.i586 *.i686" >> /etc/yum.conf
 
 for i in $(rpm -qa | grep -v glibc); do rpm --nodeps -e $i.{i386,i586,i686}; done
